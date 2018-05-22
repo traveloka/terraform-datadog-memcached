@@ -10,7 +10,7 @@ Usage
 
 ```hcl
 module "timeboard_memcached_beical-memcached" {
-  source         = "github.com/traveloka/terraform-datadog-memcached.git//timeboard"
+  source         = "github.com/traveloka/terraform-datadog-memcached//timeboard"
   product_domain = "BEI"
   cluster        = "beical-memcached"
 }

@@ -22,7 +22,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.bytes_read_into_memcached{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.bytes_read_into_memcached{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -33,7 +33,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.bytes_used_for_cache_items{$cluster, $environment} by {cacheclusterid}"
+      q    = "sum:aws.elasticache.bytes_used_for_cache_items{$cluster, $environment} by {cacheclusterid}"
       type = "area"
     }
   }
@@ -44,7 +44,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.bytes_used_for_hash{$cluster, $environment} by {cacheclusterid}"
+      q    = "sum:aws.elasticache.bytes_used_for_hash{$cluster, $environment} by {cacheclusterid}"
       type = "area"
     }
   }
@@ -55,7 +55,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.bytes_written_out_from_memcached{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.bytes_written_out_from_memcached{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -66,7 +66,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.bytes_written_out_from_memcached{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.bytes_written_out_from_memcached{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -77,7 +77,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.cas_badval{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.cas_badval{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -88,7 +88,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.cas_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.cas_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -99,7 +99,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.cas_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.cas_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -110,7 +110,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.cmd_config_get{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.cmd_config_get{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -121,7 +121,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.cmd_flush{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.cmd_flush{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -132,7 +132,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.cmd_get{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.cmd_get{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -143,7 +143,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.cmd_set{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.cmd_set{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -154,7 +154,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.cmd_touch{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.cmd_touch{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -187,7 +187,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.curr_connections{$cluster, $environment} by {cacheclusterid}"
+      q    = "sum:aws.elasticache.curr_connections{$cluster, $environment} by {cacheclusterid}"
       type = "area"
     }
   }
@@ -198,7 +198,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.curr_items{$cluster, $environment} by {cacheclusterid}"
+      q    = "sum:aws.elasticache.curr_items{$cluster, $environment} by {cacheclusterid}"
       type = "area"
     }
   }
@@ -209,7 +209,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.decr_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.decr_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -220,7 +220,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.decr_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.decr_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -231,7 +231,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.delete_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.delete_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -242,7 +242,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.delete_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.delete_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -253,7 +253,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.evicted_unfetched{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.evicted_unfetched{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -264,7 +264,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.evictions{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.evictions{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -275,7 +275,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.expired_unfetched{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.expired_unfetched{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -286,7 +286,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.freeable_memory{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.freeable_memory{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -297,7 +297,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.get_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.get_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -308,7 +308,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.get_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.get_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -319,7 +319,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.incr_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.incr_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -330,7 +330,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.incr_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.incr_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -341,7 +341,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.network_bytes_out{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.network_bytes_out{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -352,7 +352,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.new_connections{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.new_connections{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -363,7 +363,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.new_items{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.new_items{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -374,7 +374,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.reclaimed{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.reclaimed{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -385,7 +385,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.slabs_moved{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.slabs_moved{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -396,7 +396,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.swap_usage{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.swap_usage{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -407,7 +407,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.touch_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.touch_hits{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -418,7 +418,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.touch_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.touch_misses{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }
@@ -429,7 +429,7 @@ resource "datadog_timeboard" "memcached" {
     autoscale = true
 
     request {
-      q    = "avg:aws.elasticache.unused_memory{$cluster, $environment} by {cacheclusterid}.as_count()"
+      q    = "sum:aws.elasticache.unused_memory{$cluster, $environment} by {cacheclusterid}.as_count()"
       type = "area"
     }
   }

@@ -61,17 +61,6 @@ resource "datadog_timeboard" "memcached" {
   }
 
   graph {
-    title     = "Bytes Written out from Memcached"
-    viz       = "timeseries"
-    autoscale = true
-
-    request {
-      q    = "sum:aws.elasticache.bytes_written_out_from_memcached{$cluster, $environment} by {cacheclusterid}.as_count()"
-      type = "area"
-    }
-  }
-
-  graph {
     title     = "Cas Badval"
     viz       = "timeseries"
     autoscale = true
@@ -334,6 +323,17 @@ resource "datadog_timeboard" "memcached" {
       type = "area"
     }
   }
+
+    graph {
+      title     = "Network Bytes In"
+      viz       = "timeseries"
+      autoscale = true
+
+      request {
+        q    = "sum:aws.elasticache.network_bytes_in{$cluster, $environment} by {cacheclusterid}.as_count()"
+        type = "area"
+      }
+    }
 
   graph {
     title     = "Network Bytes Out"

@@ -1,5 +1,5 @@
 resource "datadog_timeboard" "memcached" {
-  count = "${var.enabled}"
+  count = "${var.enabled ? 1 : 0}"
 
   title       = "${var.product_domain} - ${var.cluster} - ${var.environment} - Memcached"
   description = "A generated timeboard for Memcached"
@@ -324,16 +324,16 @@ resource "datadog_timeboard" "memcached" {
     }
   }
 
-    graph {
-      title     = "Network Bytes In"
-      viz       = "timeseries"
-      autoscale = true
+  graph {
+    title     = "Network Bytes In"
+    viz       = "timeseries"
+    autoscale = true
 
-      request {
-        q    = "sum:aws.elasticache.network_bytes_in{$cluster, $environment} by {cacheclusterid}.as_count()"
-        type = "area"
-      }
+    request {
+      q    = "sum:aws.elasticache.network_bytes_in{$cluster, $environment} by {cacheclusterid}.as_count()"
+      type = "area"
     }
+  }
 
   graph {
     title     = "Network Bytes Out"
